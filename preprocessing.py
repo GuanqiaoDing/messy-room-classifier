@@ -3,7 +3,7 @@ import cv2 as cv
 from glob import glob
 
 categories = ['clean', 'messy']
-data_dir = {'train': './data/train', 'val': './data/val'}
+raw_dir = {'train': './raw/train', 'val': './raw/val'}
 output_dir = './images'
 extensions = ('*.jpg', '*.png')
 img_size = 299  # match Xception input size
@@ -31,7 +31,7 @@ def resize(image):
 if not os.path.exists(output_dir):
     os.mkdir(output_dir)
 
-for dataset, path in data_dir.items():
+for dataset, path in raw_dir.items():
     output_set_dir = os.path.join(output_dir, dataset)
     if not os.path.exists(output_set_dir):
         os.mkdir(output_set_dir)

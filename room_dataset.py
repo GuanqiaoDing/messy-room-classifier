@@ -8,6 +8,8 @@ data_dir = {'train': './images/train', 'val': './images/val'}
 
 
 def load_data():
+    """96 images per class in training set, 10 images per class in validation set"""
+
     x_train = list()
     x_test = list()
     y_train = list()
@@ -34,5 +36,6 @@ def load_data():
     return (x_train, y_train), (x_test, y_test)
 
 
+# save the dataset
 room_dataset = load_data()
 np.save('dataset.npy', room_dataset)
