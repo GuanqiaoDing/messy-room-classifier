@@ -11,9 +11,9 @@ def load_data():
     """96 images per class in training set, 10 images per class in validation set"""
 
     x_train = list()
-    x_test = list()
+    x_val = list()
     y_train = list()
-    y_test = list()
+    y_val = list()
 
     for dataset, path in data_dir.items():
         for i, cat in enumerate(categories):
@@ -25,17 +25,17 @@ def load_data():
                     x_train.append(img)
                     y_train.append(i)
                 else:
-                    x_test.append(img)
-                    y_test.append(i)
+                    x_val.append(img)
+                    y_val.append(i)
 
     x_train = np.asarray(x_train)
     y_train = np.asarray(y_train)
-    x_test = np.asarray(x_test)
-    y_test = np.asarray(y_test)
+    x_val = np.asarray(x_val)
+    y_val = np.asarray(y_val)
 
-    return (x_train, y_train), (x_test, y_test)
+    return (x_train, y_train), (x_val, y_val)
 
 
 # save the dataset
 room_dataset = load_data()
-np.save('dataset.npy', room_dataset)
+np.save('data/room_dataset.npy', room_dataset)

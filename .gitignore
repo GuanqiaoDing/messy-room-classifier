@@ -2,3 +2,6 @@
 __pycache__
 log
 ckpt
+data
+images
+.ipynb_checkpoints
